@@ -1,0 +1,32 @@
+{
+  "name": "mobilecare",
+  "description": "",
+  "main": "",
+  "authors": [
+    "wl"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "mobile",
+    "care"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "less": "^2.7.1",
+    "angular": "^1.5.7",
+    "angular-material": "^1.0.9",
+    "angular-ui-router": "^0.3.1",
+    "material-design-icons": "^2.2.3",
+    "angular-messages": "^1.5.7",
+    "angular-cookies": "^1.5.7",
+    "angular-validation-match": "^1.9.0"
+  }
+}

@@ -1,0 +1,139 @@
+<header class="mc-header">
+	<md-toolbar>
+		<div layout="row" layout-align="start center" flex>
+			<md-button class="md-icon-button" ng-click="" aria-label="back">
+				<md-icon md-svg-icon="navigation:ic_arrow_back_24px"></md-icon>
+			</md-button>
+			<span>生理参数</span>
+		</div>
+	</md-toolbar>
+</header>
+
+<section class="mc-section-params">
+	<div class="mc-params-div1" align="right">{{currentTime}}显示当前时间</div>
+
+	<div class="mc-params-div2" layout="row" flex="100">
+		<md-list class="mc-params-list" layout="column" flex="70">
+
+			<md-list-item layout="column" layout-align="start start">
+				<div class="mc-width mc-params-font1 mc-params-color1">II X1 监护&nbsp;&nbsp;25mm/s</div>
+				<div class="mc-width mc-params-font1 mc-params-color1" layout="column" layout-align="center center" flex>------------------------</div>
+			</md-list-item>
+
+			<md-list-item layout="column" layout-align="start start">
+				<div class="mc-width mc-params-font1 mc-params-color1">I&nbsp;&nbsp;X1</div>
+				<div class="mc-width mc-params-font1 mc-params-color1" layout="column" layout-align="center center" flex>------------------------</div>
+			</md-list-item>
+
+			<md-list-item layout="column" layout-align="start start">
+				<div class="mc-width mc-params-font1 mc-params-color1">V&nbsp;&nbsp;X1</div>
+				<div class="mc-width mc-params-font1 mc-params-color1" layout="column" layout-align="center center" flex>------------------------</div>
+			</md-list-item>
+
+			<md-list-item layout="column" layout-align="start start">
+				<div class="mc-width mc-params-font1 mc-params-color3">脉搏波</div>
+				<div class="mc-width mc-params-font1 mc-params-color3" layout="column" layout-align="center center" flex>------------------------</div>
+			</md-list-item>
+
+			<md-list-item layout="column" layout-align="start start">
+				<div class="mc-width mc-params-font1 mc-params-color4">呼吸波</div>
+				<div class="mc-width mc-params-font1 mc-params-color4" layout="column" layout-align="center center" flex>------------------------</div>
+			</md-list-item>
+		</md-list>
+
+		<md-list class="mc-params-list" layout="column" flex="30">
+			<md-list-item class="mc-list-right" layout="column" layout-align="start start" flex>
+				<div class="mc-width" layout="row" layout-align="space-between start">
+					<span class="mc-params-font1 mc-params-color1">心率&nbsp;</span>
+					<span class="mc-params-font1 mc-params-color1">起搏</span>
+					<span class="mc-params-font1 mc-params-color1">关&nbsp;</span>
+					<span class="mc-params-font1 mc-params-color1">bpm</span>
+				</div>
+				<div layout="row" class="mc-width">
+					<div layout="column">
+						<span class="mc-params-font1 mc-params-color1">120</span>
+						<span class="mc-params-font1 mc-params-color1">64</span>
+					</div>
+					<div class="mc-params-font2 mc-params-color1" layout="row" layout-align="center center">60</div>
+				</div>
+			</md-list-item>
+
+			<md-list-item class="mc-list-right" layout="column" layout-align="start start" flex>
+				<div class="mc-width" layout="row" layout-align="space-between start">
+					<div layout="row">
+						<span class="mc-params-font1 mc-params-color2">无创血压</span>
+						<span class="mc-params-font1 mc-params-color2">18:30&nbsp;</span>
+					</div>
+					<span class="mc-params-font1 mc-params-color2">mmHg</span>
+				</div>
+				<div layout="row" class="mc-width">
+					<div layout="column">
+						<span class="mc-params-font1 mc-params-color2">160</span>
+						<span class="mc-params-font1 mc-params-color2">90</span>
+					</div>
+					<div class="mc-width" layout="row" layout-align="space-between center">
+						<span class="mc-params-font3 mc-params-color2">120/80</span>
+						<span class="mc-params-font4 mc-params-color2">93</span>
+					</div>
+				</div>
+				<div class="mc-width" layout="row" layout-align="space-between center">
+					<span class="mc-params-font1 mc-params-color2">手动</span>
+					<span class="mc-params-font1 mc-params-color2">脉率</span>
+					<span class="mc-params-font1 mc-params-color2">60</span>
+				</div>
+			</md-list-item>
+
+			<md-list-item class="mc-list-right" layout="column" layout-align="start start" flex>
+				<div class="mc-width" layout="row" layout-align="space-between start">
+					<span class="mc-params-font1 mc-params-color3">血氧</span>
+					<span class="mc-params-font1 mc-params-color3">%</span>
+				</div>
+				<div layout="row" class="mc-width">
+					<div layout="column">
+						<span class="mc-params-font1 mc-params-color3">100</span>
+						<span class="mc-params-font1 mc-params-color3">70</span>
+					</div>
+					<div class="mc-params-font2 mc-params-color3" layout="row" layout-align="center center">98</div>
+				</div>
+			</md-list-item>
+
+			<md-list-item class="mc-list-right" layout="column" layout-align="start start" flex>
+				<div>
+					<span class="mc-params-font1 mc-params-color4">呼吸率</span>
+				</div>
+				<div layout="row" class="mc-width">
+					<div layout="column">
+						<span class="mc-params-font1 mc-params-color4">20</span>
+						<span class="mc-params-font1 mc-params-color4">8</span>
+					</div>
+					<div class="mc-params-font2 mc-params-color4" layout="row" layout-align="center center">20</div>
+				</div>
+			</md-list-item>
+
+			<md-list-item class="mc-list-right" layout="column" layout-align="start start" flex>
+				<div class="mc-width" layout="row" layout-align="space-between start">
+					<span class="mc-params-font1 mc-params-color5">体温1</span>
+					<span class="mc-params-font1 mc-params-color5">Td 0.5</span>
+					<span class="mc-params-font1 mc-params-color5">℃</span>
+				</div>
+				<div layout="row" class="mc-width">
+					<div layout="column">
+						<span class="mc-params-font1 mc-params-color5">39.0</span>
+						<span class="mc-params-font1 mc-params-color5">36.0</span>
+					</div>
+					<div class="mc-params-font3 mc-params-color5 mc-width" layout="row" layout-align="center center">36.0</div>
+				</div>
+				<div>
+					<span class="mc-params-font1 mc-params-color5">体温2</span>
+				</div>
+				<div layout="row" class="mc-width">
+					<div layout="column">
+						<span class="mc-params-font1 mc-params-color5">39.0</span>
+						<span class="mc-params-font1 mc-params-color5">36.0</span>
+					</div>
+					<div class="mc-params-font3 mc-params-color5 mc-width" layout="row" layout-align="center center">36.5</div>
+				</div>
+			</md-list-item>
+		</md-list>
+	</div>
+</section>

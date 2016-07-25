@@ -1,0 +1,70 @@
+<header>
+	<md-toolbar>
+		<div layout="row" layout-align="start center" flex>
+			<md-button class="md-icon-button" href="/">
+				<md-icon md-svg-icon="navigation:ic_arrow_back_24px"></md-icon>
+			</md-button>
+			<span>填写基本信息</span>
+		</div>
+	</md-toolbar>
+</header>
+
+<section>
+	<md-content class="mc-content-top" layout-padding>
+		<form name="guardianInfoAddForm" novalidate layout="column" layout-align="start center" flex>
+			<md-input-container class="mc-input-container">
+				<label>姓名(必填)</label>
+				<input type="text" name="name" ng-model="" required/>
+			</md-input-container>
+
+			<md-input-container class="mc-input-container mc-input-container-select">
+				<label>性别(必选)</label>
+				<md-select ng-model="" name="sex" required>
+					<md-option value="male">男</md-option>
+					<md-option value="female">女</md-option>
+				</md-select>
+			</md-input-container>
+
+			<md-input-container class="mc-input-container">
+				<label>座机</label>
+				<input type="text" name="fixedTel"/>
+			</md-input-container>
+
+			<md-input-container class="mc-input-container">
+				<label>手机</label>
+				<input type="text" name="mobilePhone"/>
+			</md-input-container>
+
+			<md-input-container class="mc-input-container">
+				<label>电子邮箱</label>
+				<input type="email" name="email" ng-pattern="/^.+@.+\..+$/"/>
+				<div ng-messages="guardianInfoAddForm.email.$error" role="alert">
+					<div ng-message="pattern">请输入正确的邮箱地址！</div>
+				</div>
+				<!-- <div ng-show="guardianInfoAddForm.email.$error">请输入正确的邮箱地址！</div>
+			类型就是email还需要验证吗？ -->
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>微信号</label>
+			<input type="text" name="weChat"/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>地址</label>
+			<input type="text" name="address"/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>邮政编码</label>
+			<input type="text" name="postalCode" ng-model="" md-maxlength="6" ng-pattern="/^[0-9]{6,}$/"/>
+			<div ng-messages="guardianInfoAddForm.postalCode.$error" role="alert" multiple>
+				<div ng-message="pattern">请输入正确的邮政编码!</div>
+				<div ng-message="md-maxlength">请输入6位数的邮政编码!</div>
+			</div>
+		</md-input-container>
+
+		<md-button class="md-raised md-primary mc-btn-width" ng-disabled="guardianInfoAddForm.$invalid" ng-click="">确定</md-button>
+	</form>
+</md-content>
+</section>

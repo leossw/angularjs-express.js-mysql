@@ -1,0 +1,64 @@
+<header>
+	<md-toolbar>
+		<div layout="row" layout-align="space-between center" flex>
+			<span class="mc-text">患者</span>
+			<md-button ng-click="" aria-label="addPatient">
+				<md-icon md-svg-icon="social:ic_person_add_24px"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+</header>
+
+<section class="mc-content-top" layout="column">
+	<div>
+		<md-subheader>授权监护</md-subheader>
+		<div layout="row" layout-align="start center">
+			<img class="mc-picture" ng-src="img/picture.jpg" alt="头像"/>
+			<span>{{authorizationGuardian.name}}廖青青</span>
+			<md-icon class="mc-verify-icon1" md-svg-icon="action:ic_verified_user_24px" aria-label="guardian verified" ng-class="{'md-primary md-hue-3':true}"></md-icon>
+		</div>
+	</div>
+
+	<div>
+		<md-subheader>普通监护({{commonGuardian.count}}1)</md-subheader>
+		<md-list>
+			<md-list-item class="mc-commonGuardian-list" layout="row" layout-align="start center">
+				<img class="mc-picture" ng-src="img/picture.jpg" alt="个人头像"/>
+				<span>{{}}患者1</span>
+				<md-icon class="mc-verify-icon2" md-svg-icon="action:ic_verified_user_24px" aria-label="guardian verified" ng-class="{'md-primary md-hue-3':true}"></md-icon>
+			</md-list-item>
+
+			<md-list-item class="mc-commonGuardian-list" layout="row" layout-align="start center">
+				<img class="mc-picture" ng-src="img/picture.jpg" alt="个人头像"/>
+				<span>{{}}患者2</span>
+				<md-icon class="mc-verify-icon2" md-svg-icon="action:ic_verified_user_24px" aria-label="guardian verified" ng-class="{'md-primary md-hue-3':false}"></md-icon>
+			</md-list-item>
+		</md-list>
+		<!-- 用ng-repeat循环 -->
+	</div>
+</section>
+
+<footer class="mc-footer">
+	<md-list layout="row" layout-align="space-around center" flex>
+		<md-list-item>
+			<md-button class="mc-footer-btn" layout="column" layout-align="start center" flex>
+				<md-icon  style="color: #3f51b5;" md-svg-icon="social:ic_people_24px"></md-icon>
+				<span class="mc-home-font2" style="color: #3f51b5;">患者</span>
+			</md-button>
+		</md-list-item>
+
+		<md-list-item>
+			<md-button class="mc-footer-btn" layout="column" layout-align="start center" flex>
+				<md-icon md-svg-icon="communication:ic_message_24px"></md-icon>
+				<span class="mc-home-font2">消息</span>
+			</md-button>
+		</md-list-item>
+
+		<md-list-item>
+			<md-button class="mc-footer-btn" layout="column" layout-align="start center" flex>
+				<md-icon md-svg-icon="social:ic_person_24px"></md-icon>
+				<span class="mc-home-font2">我</span>
+			</md-button>
+		</md-list-item>
+	</md-list>
+</footer>             <!-- JS中弹出框来添加患者 -->

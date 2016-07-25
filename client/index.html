@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mobilecare">
+<head>
+	<meta charset="UTF-8">
+	<title>移动医疗</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<base href="/">
+	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="styleesheet">
+    -->
+	<link rel="stylesheet/less" type="text/css" href="styles/main.less"/>
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css"/>
+</head>
+<body>
+	<div ui-view></div>
+	<script src="bower_components/less/dist/less.js"></script>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.js"></script>
+	<script src="bower_components/angular-material/angular-material.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="bower_components/angular-validation-match/dist/angular-validation-match.js"></script>
+
+	<script src="myapp.js"></script>
+	<script src="routes.js"></script>
+<!--1、 前期先引用controller，后期再汇总到一两个js中引用;
+	2、 如何按需加载js? -->
+	<script src="accounts/controller/login.js"></script>
+	<script src="accounts/controller/register.js"></script>
+	<script src="home/controller/home_patient.js"></script>
+	<script src="home/controller/home_guardian.js"></script>
+	<script src="accounts/controller/patient_info_add.js"></script>
+
+</body>
+</html>

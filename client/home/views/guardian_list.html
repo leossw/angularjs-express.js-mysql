@@ -1,0 +1,59 @@
+<header>
+	<md-toolbar>
+		<div layout="row" layout-align="start center" flex>
+			<md-button class="md-icon-button" href="/home" aria-label="back">
+				<md-icon md-svg-icon="navigation:ic_arrow_back_24px"></md-icon>
+			</md-button>
+			<span>监护人</span>
+		</div>
+	</md-toolbar>
+</header>
+
+<section>
+	<div>
+		<md-subheader>待确认的监护人只有通过确认生效后,才能进行患者监护.</md-subheader>
+	</div>
+	<md-divider></md-divider>
+	<div>
+		<md-subheader>授权监护人</md-subheader>
+		<div layout="row" layout-align="start center">
+			<img ng-src="img/picture.jpg" alt="头像" class="mc-picture"/>
+			<span>{{authorizationGuardian.name}}监护人</span>
+			<md-icon class="mc-verify-icon1" md-svg-icon="action:ic_verified_user_24px" aria-label="guardian verified" ng-class="{'md-primary md-hue-3':true}"></md-icon>
+			<!-- 通过ng-class加载不同的css来判断申请监护人是否确认 -->
+		</div>
+	</div>
+	<md-divider></md-divider>
+	<div>
+		<md-subheader>普通监护人({{count}}数量)</md-subheader>
+		<md-list>
+			<md-list-item class="mc-commonGuardian-list" layout="row" layout-align="start center">
+				<img ng-src="img/picture.jpg" alt="头像" class="mc-picture"/>
+				<span>{{commonGuardian.name}}监护人</span>
+				<md-icon class="mc-verify-icon2" md-svg-icon="action:ic_verified_user_24px" aria-label="guardian verified" ng-class="{'md-primary md-hue-3':true}"></md-icon>
+			</md-list-item>
+			<md-list-item class="mc-commonGuardian-list" layout="row" layout-align="start center">
+				<img ng-src="img/picture.jpg" alt="头像" class="mc-picture"/>
+				<span>{{commonGuardian.name}}监护人</span>
+				<md-icon class="mc-verify-icon2" md-svg-icon="action:ic_verified_user_24px" aria-label="guardian verified" ng-class="{'md-primary md-hue-3':true}"></md-icon>
+			</md-list-item>
+			<md-list-item class="mc-commonGuardian-list" layout="row" layout-align="start center">
+				<img ng-src="img/picture.jpg" alt="头像" class="mc-picture"/>
+				<span>{{commonGuardian.name}}监护人</span>
+				<md-icon class="mc-verify-icon2" md-svg-icon="action:ic_verified_user_24px" aria-label="guardian verified" ng-class="{'md-primary md-hue-3':true}"></md-icon>
+			</md-list-item>
+			<md-list-item class="mc-commonGuardian-list" layout="row" layout-align="start center">
+				<img ng-src="img/picture.jpg" alt="头像" class="mc-picture"/>
+				<span>{{commonGuardian.name}}监护人</span>
+				<md-icon class="mc-verify-icon2" md-svg-icon="action:ic_verified_user_24px" aria-label="guardian verified" ng-class="{'md-primary md-hue-3':true}"></md-icon>
+			</md-list-item>
+			<md-list-item class="mc-commonGuardian-list" layout="row" layout-align="start center">
+				<img ng-src="img/picture.jpg" alt="头像" class="mc-picture"/>
+				<span>{{commonGuardian.name}}监护人</span>
+				<md-icon class="mc-verify-icon2" md-svg-icon="action:ic_verified_user_24px" aria-label="guardian verified" ng-class="{'md-primary md-hue-3':false}"></md-icon>
+			</md-list-item>
+
+			<!-- 用ng-repeat重复 -->
+		</md-list>
+	</div>
+</section>

@@ -1,0 +1,59 @@
+<header>
+	<md-toolbar>
+		<div layout="row" layout-align="start center" flex>
+			<md-button class="md-icon-button" aria-label="back" ng-href="/login">
+				<md-icon md-svg-icon="navigation:ic_arrow_back_24px"></md-icon>
+			</md-button>
+			<span>注册账号</span>
+		</div>
+	</md-toolbar>
+</header>
+
+<section class="mc-content-top">
+	<form name="registerForm" layout="column" layout-align="start center" flex>
+		<md-input-container class="mc-input-container">
+			<md-icon md-svg-icon="action:ic_account_box_24px"></md-icon>
+			<label>用户名(必填)</label>
+			<input type="text" name="userName" ng-pattern="/^[a-zA-Z][a-zA-Z0-9_]{3,}$/" md-maxlength="20" ng-model="rc.userName" required/>
+			<div ng-messages="registerForm.userName.$error" role="alert" multiple>
+				<div ng-message="pattern">4~20个字符(字母、数字、下划线)，以字母开头</div>
+				<div ng-message="md-maxlength">不能超过20个字符</div>   
+		<!--	<div ng-message="required">用户名必填</div>  -->
+		<!--		 可以直接在pattern规定吗？-->
+			</div>
+		</md-input-container>
+		<md-input-container class="mc-input-container">
+			<md-icon md-svg-icon="action:ic_lock_open_24px"></md-icon>
+			<label>密码(必填、区分大小写)</label>
+			<input type="password" name="password" ng-pattern="/\S{6,}$/" md-maxlength="20" ng-model="rc.password" required/>
+			<div ng-messages="registerForm.password.$error" role="alert" multiple>
+				<div ng-message="pattern">6~20个字符，区分大小写</div>
+				<div ng-message="md-maxlength">不能超过20个字符</div>
+			</div>
+		</md-input-container>
+		<md-input-container class="mc-input-container">
+			<md-icon md-svg-icon="action:ic_lock_outline_24px"></md-icon>
+			<label>确认密码</label>
+			<input type="password" name="passwordConfirm" ng-model="rc.passwordConfirm" match="rc.password" required/>
+			<div ng-show="registerForm.passwordConfirm.$dirty && registerForm.passwordConfirm.$error.match" class="mc-register-alert">两次输入的密码不一致</div>
+		<!--	<div ng-messages="registerForm.passwordConfirm.$error" role="alert"> 
+				<div ng-message="pattern">两次输入的密码不一致</div>
+			</div>      -->
+		<!--	添加match包直接使用，写JS的时候自己写试试 -->
+		</md-input-container>
+		<md-input-container class="mc-input-container">
+			<md-icon md-svg-icon="social:ic_person_outline_24px"></md-icon>
+			<label>昵称</label>
+			<input type="text" ng-model="rc.nickname"/>
+		</md-input-container>
+		<md-input-container class="mc-input-container mc-input-container-select">
+			<md-icon md-svg-icon="action:ic_list_24px"></md-icon>
+			<label>用户类型(必选)</label>
+			<md-select ng-model="rc.userType" required>
+				<md-option value="01">患者</md-option>
+				<md-option value="02">监护人</md-option>
+			</md-select>
+		</md-input-container>
+		<md-button class="md-raised md-primary mc-btn-width" ng-disabled="registerForm.$invalid" ng-click="rc.register()">注册</md-button>
+	</form>
+</section>

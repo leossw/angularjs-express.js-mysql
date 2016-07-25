@@ -1,0 +1,27 @@
+<header>
+	<md-toolbar>
+		<div layout="row" layout-align="center center" flex>
+			<h1>移动医疗</h1>
+		</div>
+	</md-toolbar>
+</header>
+
+<section>
+	<div layout="column" layout-align="start center" flex>
+		<div>
+			<img ng-src="images/doctor_1.jpg" alt="portrait" class="mc-portrait"/>
+		</div>
+		<md-input-container class="md-block mc-input-container">
+			<md-icon md-svg-icon="social:ic_person_outline_24px"></md-icon>
+			<label>用户名</label>
+			<input type="text" ng-model="lc.userName" required/>
+		</md-input-container>
+		<md-input-container class="md-block mc-input-container">
+			<md-icon md-svg-icon="action:ic_lock_open_24px"></md-icon>
+			<label>密码</label>
+			<input type="password" ng-model="lc.password" required/>
+		</md-input-container>
+		<md-button class="md-raised md-primary mc-btn-width" ng-click="lc.login()" aria-label="login">登陆</md-button>
+		<md-button class="md-raised md-primary mc-btn-width" href="/register" aria-label="register">注册</md-button>
+	</div>
+</section>

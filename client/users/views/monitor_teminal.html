@@ -1,0 +1,69 @@
+<header>
+	<md-toolbar>
+		<div layout="row" layout-align="start center" flex>
+			<md-button class="md-icon-button" href="/user" aria-label="back">
+				<md-icon md-svg-icon="navigation:ic_arrow_back_24px"></md-icon>
+			</md-button>
+			<span>监测终端</span>
+		</div>
+	</md-toolbar>
+</header>
+
+<section>
+	<md-content class="md-cotent-top" layout="column" layout-align="start center" layout-padding flex>
+		<md-input-container class="mc-input-container">
+			<label>终端序列号</label>
+			<input type="text" name="serialNumber" ng-model="" disabled/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>终端名称</label>
+			<input type="text" name="terminalName" ng-model="" disabled/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>固件版本号</label>
+			<input type="text" name="firmwareVersionNumber" ng-model="" disabled/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>生产日期</label>
+			<input type="text" name="productDate" ng-model="" disabled/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>注册验证码</label>
+			<input type="text" name="registerVerifiedCode" ng-model="" disabled/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>监护仪ID</label>
+			<input type="text" name="monitorID" ng-model="" disabled/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>安装时间</label>
+			<input type="text" name="installTime" ng-model="" disabled/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container mc-input-container-select">
+			<label>设备状态</label>
+			<md-select name="deviceStatus" ng-model="" disabled>
+				<md-option value="0">监护中</md-option>
+				<md-option value="1">正常</md-option>
+				<md-option value="2">存在未知使用人</md-option>
+				<md-option value="3">设备故障</md-option>
+				<md-option value="2">设备停用</md-option>
+				<md-option value="3">未知</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container mc-input-container-select">
+			<label>绑定状态</label>
+			<md-select name="bindingStatus" ng-model="" disabled>
+				<md-option value="0">未绑定</md-option>
+				<md-option value="1">已绑定</md-option>
+			</md-select>
+		</md-input-container>
+	</md-content>
+</section>

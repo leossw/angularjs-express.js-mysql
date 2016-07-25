@@ -1,0 +1,75 @@
+<header>
+	<md-toolbar>
+		<div layout="row" layout-align="space-between center" flex>
+			<div layout="row" layout-align="start center" flex>
+				<md-button class="md-icon-button" href="user" aria-label="back">
+					<md-icon md-svg-icon="navigation:ic_arrow_back_24px"></md-icon>
+				</md-button>
+				<span>个人信息</span>
+			</div>
+			<md-button ng-click="" aria-label="修改信息">
+				<md-icon md-svg-icon="content:ic_create_24px"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+</header>
+
+<section>
+	<md-content class="mc-content-top" layout-padding>
+		<form name="personalInfoGuardian" layout="column" layout-align="start center" flex novalidate>
+			<md-input-container class="mc-input-container">
+				<label>姓名(必填)</label>
+				<input type="text" name="name" ng-model="123" required ng-disabled="true"/>
+			</md-input-container>
+
+			<md-input-container class="mc-input-container mc-input-container-select">
+				<label>性别(必选)</label>
+				<md-select name="sex" ng-model="" required ng-disabled="true">
+					<md-option value="male">男</md-option>
+					<md-option value="female">女</md-option>
+				</md-select>
+			</md-input-container>
+
+			<md-input-container class="mc-input-container">
+				<label>座机</label>
+				<input type="text" name="fixedTel" ng-disabled="true"/>
+			</md-input-container>
+
+			<md-input-container class="mc-input-container">
+				<label>手机</label>
+				<input type="text" name="mobilePhone" ng-disabled="true"/>
+			</md-input-container>
+
+			<md-input-container class="mc-input-container">
+				<label>电子邮箱</label>
+				<input type="email" name="email" ng-pattern="/^.+@.+\..+$/" ng-disabled="true"/>
+				<div ng-messages="personalInfoGuardian.email.$error" role="alert">
+					<div ng-message="pattern">请输入正确的邮箱地址！</div>
+				</div>
+				<!-- <div ng-show="personalInfo.email.$error">请输入正确的邮箱地址！</div>
+			类型就是email还需要验证吗？ -->
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>微信号</label>
+			<input type="text" name="weChat" ng-disabled="true"/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>地址</label>
+			<input type="text" name="address" ng-disabled="true"/>
+		</md-input-container>
+
+		<md-input-container class="mc-input-container">
+			<label>邮政编码</label>
+			<input type="text" name="postalCode" ng-model="" md-maxlength="6" ng-pattern="/^[0-9]{6,}$/" ng-disabled="true"/>
+			<div ng-messages="personalInfoGuardian.postalCode.$error" role="alert" multiple>
+				<div ng-message="pattern">请输入正确的邮政编码!</div>
+				<div ng-message="md-maxlength">请输入6位数的邮政编码!</div>
+			</div>
+		</md-input-container>
+
+		<md-button class="md-raised md-primary mc-btn-width" ng-show="false" ng-click="">确定</md-button>
+	</form>
+</md-content>
+</section>
