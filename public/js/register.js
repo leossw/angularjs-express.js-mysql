@@ -34,6 +34,16 @@ exports.addUser = function (req,res){
 	});
 }
 
+exports.getCurrentUserId = function (req,res){
+	var userName = req.body.userName;
+	pool.getConnection(function (err,connection){
+		connection.query('SELECT id FROM user WHERE username=?',[userName],function (err,results){
+			res.send(results);
+			connection.release();
+		});
+	});
+}
+
 exports.getCountryCode = function (req,res){
 	pool.getConnection(function (err,connection){
 		connection.query('SELECT code,chinese_short_name FROM country_code',function (err,results){
