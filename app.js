@@ -18,7 +18,7 @@ app.engine('.html',ejs.__express);
 app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,6 +30,7 @@ app.use('/',routes);
 app.post('/api/login',login.verify);
 app.post('/api/register/addUser',register.addUser);
 app.get('/api/CountryCode',register.getCountryCode);
+app.post('/api/currentUserId',register.getCurrentUserId);
 /*app.get('/',function (req,res){
 	res.sendFile('./mc/index.html',{"root": __dirname});
 });
@@ -37,7 +38,12 @@ app.get('/api/CountryCode',register.getCountryCode);
 
 
 
-//404页面
+//404
+/*app.use(function (req,res,next){
+	res.status(404).send('NOT FOUND');
+	res.status(400).sendFile('');
+})
+*/
 
 app.listen(3000);
 console.log('Server is running..');
