@@ -1,5 +1,5 @@
-var pool = require('./pool');
-var crypto = require('crypto');
+﻿var pool = require('./pool');
+var crypto = require('crypto');      //密码采用sha1加密
 
 
 exports.addUser = function (req,res){
