@@ -14,13 +14,15 @@
 		<form name="terminalBindingForm" class="mc-content-top" layout="column" layout-align="start center" novalidate flex>
 			<md-input-container class="mc-input-container">
 				<label>设备序列号(必填)</label>
-				<input type="text" name="serialNumber" ng-model="" required/>
+				<input type="text" name="serialNumber" ng-model="rtbc.serialNumber" required/>
 			</md-input-container>
 			<md-input-container class="mc-input-container">
 				<label>设备注册验证码(必填)</label>
-				<input type="text" name="verificationCode" ng-model="" required/>
+				<input type="text" name="verificationCode" ng-model="rtbc.verificationCode" required/>
 			</md-input-container>
-			<md-button class="md-raised md-primary mc-btn-width" ng-disabled="terminalBindingForm.$invalid" ng-click="">确定</md-button>
-		</form>
-	</md-content>
+			<!-- 		<md-button class="md-raised md-primary mc-btn-width" ng-disabled="terminalBindingForm.$invalid" ng-click="">确定</md-button>
+		-->
+		<md-button class="md-raised md-primary mc-btn-width" href="/login">确定</md-button>
+	</form>
+</md-content>
 </section>
