@@ -1,6 +1,7 @@
 var pool = require('./pool');
 var crypto = require('crypto');
 
+//用户登录验证
 exports.verify = function(req,res){
 	var sha1 = crypto.createHash('sha1');
 	var userName = req.body.userName;
