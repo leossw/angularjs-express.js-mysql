@@ -7,7 +7,7 @@ angular.module('mobilecare').controller('RegisterCtrl',
 //定义字符串
    	vm.userName = '';
     vm.password = '';
-//    vm.passwordConfirm = '';
+//	vm.passwordConfirm = '';
     vm.nickname = '';
     vm.userType = '';
     vm.errorMessage = '';    //定义错误信息
@@ -18,8 +18,8 @@ angular.module('mobilecare').controller('RegisterCtrl',
 		$http.post('/api/currentUserId',{userName:vm.userName})
 			.success(function (data){
 				$cookies.put('currentUserName',vm.userName,{'expires': expireDate});
-    			$cookies.put('currentUserId',data[0].id,{'expires': expireDate});
-    		//	console.log(data[0].id);
+    			$cookies.put('currentUserId',data.id,{'expires': expireDate});
+    		//	console.log(data.id);
 			})
 			.error(function (data){
 				console.log('无法获取用户id');
