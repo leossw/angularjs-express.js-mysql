@@ -20,8 +20,8 @@
 			<md-input-container class="mc-input-container mc-input-container-select">
 				<label>性别(必选)</label>
 				<md-select ng-model="piac.patient.sex" name="sex" required>
-					<md-option value="male">男</md-option>
-					<md-option value="female">女</md-option>
+					<md-option value="男">男</md-option>
+					<md-option value="女">女</md-option>
 				</md-select>
 			</md-input-container>
 
@@ -40,8 +40,8 @@
 			</md-input-container>
 
 			<md-input-container class="mc-input-container mc-input-container-select">
-				<label>证件类型</label>
-				<md-select ng-model="piac.patient.certificateType" name="certificateType">
+				<label>证件类型(必选)</label>
+				<md-select ng-model="piac.patient.certificateType" name="certificateType" required>
 					<md-option value="01">居民身份证</md-option>
 					<md-option value="02">港澳通行证</md-option>
 					<md-option value="03">台湾通行证</md-option>
@@ -50,8 +50,8 @@
 			</md-input-container>
 
 			<md-input-container class="mc-input-container">
-				<label>证件号码</label>
-				<input type="text" name="idCard" ng-model="piac.patient.idCard"/>
+				<label>证件号码(必填)</label>
+				<input type="text" name="idCard" ng-model="piac.patient.idCard" required/>
 			</md-input-container>
 
 			<md-input-container class="mc-input-container">
