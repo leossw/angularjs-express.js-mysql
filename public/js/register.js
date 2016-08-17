@@ -1,9 +1,9 @@
-﻿var pool = require('./pool');
-var crypto = require('crypto');      //密码采用sha1加密
+var pool = require('./pool');
+var crypto = require('crypto');   //用sha1给密码加密
 
-
+//注册添加用户
 exports.addUser = function (req,res){
-	var sha1 = crypto.createHash('sha1');
+	var sha1 = crypto.createHash('sha1');    
 	var userName = req.body.userName,
 		password = sha1.update(req.body.password).digest('hex'),
 		nickname = req.body.nickname,
@@ -34,16 +34,18 @@ exports.addUser = function (req,res){
 	});
 }
 
+//为cookies获取用户id
 exports.getCurrentUserId = function (req,res){
 	var userName = req.body.userName;
 	pool.getConnection(function (err,connection){
 		connection.query('SELECT id FROM user WHERE username=?',[userName],function (err,results){
-			res.send(results);
+			res.send(results[0]);
 			connection.release();
 		});
 	});
 }
 
+//获取国家编码
 exports.getCountryCode = function (req,res){
 	pool.getConnection(function (err,connection){
 		connection.query('SELECT code,chinese_short_name FROM country_code',function (err,results){
@@ -53,8 +55,19 @@ exports.getCountryCode = function (req,res){
 	});
 }
 
-
-
+//添加患者个人信息
 exports.patientInfoAdd = function (req,res){
-	
+	var birthday = req.body.birthday.slice(0,10);
+	pool.getConnection(function (err,connection){
+		connection.query('INSERT INTO patient (serial_number,name,sex,birthday,country_code,certificate_type_code,identity_card,phone,mobile,email,weixin,address,postalcode,height,weight,blood_type_code,vital_signs,registrar,register_time,patient_type_code,organization_id,common_guardian_verification_code,authorization_guardian_verification_code,user_id,remark) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+			[req.body.serialNumber,req.body.name,req.body.sex,birthday,req.body.countryCode,req.body.certificateType,req.body.idCard,req.body.fixedTel,req.body.mobilePhone,req.body.email,req.body.weChat,req.body.address,req.body.postalCode,req.body.height,req.body.weight,req.body.bloodType,req.body.mainDisease,req.body.registrar,req.body.registerTime,req.body.patientType,req.body.organizationId,req.body.commonGuardianVerificationCode,req.body.authorizationGuardianVerificationCode,req.body.userId,req.body.remark],function (err,results){
+				if(err){
+					console.log(err.message);
+					return;
+				}else{
+					res.send('信息添加成功');    //信息添加成功返回01
+				}
+		connection.release();
+		});
+	});
 }
