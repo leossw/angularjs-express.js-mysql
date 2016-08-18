@@ -32,6 +32,7 @@ app.post('/api/register/addUser',register.addUser);
 app.get('/api/CountryCode',register.getCountryCode);
 app.post('/api/currentUserId',register.getCurrentUserId);
 app.post('/api/register/addPatientInfo',register.patientInfoAdd);
+app.post('/api/register/addGuardianInfo',register.guardianInfoAdd);
 /*app.get('/',function (req,res){
 	res.sendFile('./mc/index.html',{"root": __dirname});
 });
