@@ -19,20 +19,16 @@ exports.verify = function(req,res){
 				return;
 			}
 			if(results == ''){
-				res.send('该用户名不存在');
-				return;
+				res.send('用户名不存在');
 			}
 			else if(results[0].password !== password){
 				res.send('密码错误');
-				return;
 			}
 			else if(results[0].user_type == 01){
 				res.send('患者用户');
-				return;
 			}
 			else if(results[0].user_type == 02){
 				res.send('监护人用户');
-				return;
 			}
 
 		connection.release();
