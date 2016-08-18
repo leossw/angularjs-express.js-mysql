@@ -84,7 +84,7 @@ angular.module('mobilecare').controller('PatientInfoAddCtrl',
     	return y + '-' + m + '-' + d+' '+h+':'+minute+':'+seconds;  
 };  
 
-//添加用户信息
+//添加患者信息
     vm.addInfo = function (){
     	var patientInfo = {
     	serialNumber: vm.patient.serialNumber,
@@ -116,19 +116,18 @@ angular.module('mobilecare').controller('PatientInfoAddCtrl',
 
     	$http.post('/api/register/addPatientInfo',patientInfo)
     		.success(function (data){
-    			if( data == '信息添加成功'){
-    				vm.errorMessage = data;
+    			if( data == '01'){
+    				vm.errorMessage = '信息添加成功';
     				vm.showAlert();
     				$state.go('registernb');
     			}
-    			else{
+    			else if(data == '02'){
     				vm.errorMessage = '信息添加失败';
     				vm.showAlert();
-    				$state.go('login');
     			}
     		})
     		.error(function (data){
-    			console.log('用户信息添加失败');
+    			console.log('客户端请求失败，患者信息添加失败');
     		});
    		}
 

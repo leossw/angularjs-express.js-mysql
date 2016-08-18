@@ -37,22 +37,26 @@ angular.module('mobilecare')
 		.state('registernb',{
 			url: '/registernb',
 			templateUrl: 'accounts/views/register_nextstep_binding.html',
-			controller: 'RegisterNBCtrl',
-			controllerAs: 'rnbc'
+//			controller: 'RegisterNBCtrl',
+//			controllerAs: 'rnbc'
 		})
 		.state('registerng',{
 			url: '/registerng',
 			templateUrl: 'accounts/views/register_nextstep_guardian.html',
+//			controller: 'RegisterNGCtrl',
+//			controllerAs: 'rngc'
 		})
 		.state('registernp',{
 			url: '/registernp',
 			templateUrl: 'accounts/views/register_nextstep_patient.html',
+//			controller: 'RegisterNPCtrl',
+//			controllerAs: 'rnpc'
 		})
 		.state('registertb',{
 			url: '/registertb',
 			templateUrl: 'accounts/views/register_terminal_binding.html',
-			controller: 'RegisterTBCtrl',
-			controllerAs: 'rtbc'
+//			controller: 'RegisterTBCtrl',
+//			controllerAs: 'rtbc'
 		})
 		.state('cameramonitoring',{
 			url: '/cameramonitoring',
@@ -81,14 +85,14 @@ angular.module('mobilecare')
 		.state('homeguardian',{
 			url: '/homeguardian',
 			templateUrl: 'home/views/home_guardian.html',
-			controller: 'HomeGuardianCtrl',
-			controllerAs: 'hgc'
+//			controller: 'HomeGuardianCtrl',
+//			controllerAs: 'hgc'
 		})
 		.state('homepatient',{
 			url: '/homepatient',
 			templateUrl: 'home/views/home_patient.html',
-			controller: 'HomePatientCtrl',
-			controllerAs: 'hpc'
+//			controller: 'HomePatientCtrl',
+//			controllerAs: 'hpc'
 		})
 
 		//需要订阅生理参数数据
