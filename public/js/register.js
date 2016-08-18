@@ -18,7 +18,8 @@ exports.addUser = function (req,res){
 			if(results[0]){
 				res.send('用户名已存在');
 				return;
-			}else{
+			}
+			else{
 				connection.query('INSERT INTO user (username,password,user_nicename,user_type)VALUES(?,?,?,?)',
 					[userName,password,nickname,userType],function (err,results){
 						if(err){
@@ -62,12 +63,30 @@ exports.patientInfoAdd = function (req,res){
 		connection.query('INSERT INTO patient (serial_number,name,sex,birthday,country_code,certificate_type_code,identity_card,phone,mobile,email,weixin,address,postalcode,height,weight,blood_type_code,vital_signs,registrar,register_time,patient_type_code,organization_id,common_guardian_verification_code,authorization_guardian_verification_code,user_id,remark) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
 			[req.body.serialNumber,req.body.name,req.body.sex,birthday,req.body.countryCode,req.body.certificateType,req.body.idCard,req.body.fixedTel,req.body.mobilePhone,req.body.email,req.body.weChat,req.body.address,req.body.postalCode,req.body.height,req.body.weight,req.body.bloodType,req.body.mainDisease,req.body.registrar,req.body.registerTime,req.body.patientType,req.body.organizationId,req.body.commonGuardianVerificationCode,req.body.authorizationGuardianVerificationCode,req.body.userId,req.body.remark],function (err,results){
 				if(err){
+					res.send('02');   //信息添加失败返回02
 					console.log(err.message);
-					return;
-				}else{
-					res.send('信息添加成功');    //信息添加成功返回01
 				}
-		connection.release();
+				else{
+					res.send('01');   //信息添加成功返回01
+				}
+			connection.release();
+		});
+	});
+}
+
+//添加监护人个人信息
+exports.guardianInfoAdd = function (req,res){
+	pool.getConnection(function (err,connection){
+		connection.query('INSERT INTO guardian (guardian_type_code,name,sex,phone,mobile,email,weixin,address,postalcode,organization_id,user_id) VALUES (?,?,?,?,?,?,?,?,?,?,?)',
+			[req.body.guardianType,req.body.name,req.body.sex,req.body.fixedTel,req.body.mobilePhone,req.body.email,req.body.wechat,req.body.address,req.body.postalCode,req.body.organizationId,req.body.userId],function (err,results){
+			if(err){
+				res.send('02');   //信息添加失败返回02
+				console.log(err.message);
+			}
+			else{
+				res.send('01');   //信息添加成功返回01
+			}
+			connection.release();
 		});
 	});
 }
