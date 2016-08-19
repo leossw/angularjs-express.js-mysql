@@ -1,41 +1,41 @@
 <header class="mc-header">
 	<md-toolbar>
 		<div layout="row" layout-align="start center" flex>
-			<md-button class="md-icon-button" ng-click="" aria-label="back">
+			<md-button class="md-icon-button" href="/homepatient" aria-label="back">
 				<md-icon md-svg-icon="navigation:ic_arrow_back_24px"></md-icon>
 			</md-button>
-			<span>生理参数</span>
+			<span class="mc-header-span">生理参数</span>
 		</div>
 	</md-toolbar>
 </header>
 
 <section class="mc-section-params">
-	<div class="mc-params-div1" align="right">{{currentTime}}显示当前时间</div>
+	<div class="mc-params-div1" align="right">{{ppc.currentTime}}</div>
 
 	<div class="mc-params-div2" layout="row" flex="100">
 		<md-list class="mc-params-list" layout="column" flex="70">
 
-			<md-list-item layout="column" layout-align="start start">
+			<md-list-item class="mc-list-left" layout="column" layout-align="start start">
 				<div class="mc-width mc-params-font1 mc-params-color1">II X1 监护&nbsp;&nbsp;25mm/s</div>
 				<div class="mc-width mc-params-font1 mc-params-color1" layout="column" layout-align="center center" flex>------------------------</div>
 			</md-list-item>
 
-			<md-list-item layout="column" layout-align="start start">
+			<md-list-item class="mc-list-left" layout="column" layout-align="start start">
 				<div class="mc-width mc-params-font1 mc-params-color1">I&nbsp;&nbsp;X1</div>
 				<div class="mc-width mc-params-font1 mc-params-color1" layout="column" layout-align="center center" flex>------------------------</div>
 			</md-list-item>
 
-			<md-list-item layout="column" layout-align="start start">
+			<md-list-item class="mc-list-left" layout="column" layout-align="start start">
 				<div class="mc-width mc-params-font1 mc-params-color1">V&nbsp;&nbsp;X1</div>
 				<div class="mc-width mc-params-font1 mc-params-color1" layout="column" layout-align="center center" flex>------------------------</div>
 			</md-list-item>
 
-			<md-list-item layout="column" layout-align="start start">
+			<md-list-item class="mc-list-left" layout="column" layout-align="start start">
 				<div class="mc-width mc-params-font1 mc-params-color3">脉搏波</div>
 				<div class="mc-width mc-params-font1 mc-params-color3" layout="column" layout-align="center center" flex>------------------------</div>
 			</md-list-item>
 
-			<md-list-item layout="column" layout-align="start start">
+			<md-list-item class="mc-list-left" layout="column" layout-align="start start">
 				<div class="mc-width mc-params-font1 mc-params-color4">呼吸波</div>
 				<div class="mc-width mc-params-font1 mc-params-color4" layout="column" layout-align="center center" flex>------------------------</div>
 			</md-list-item>
@@ -59,24 +59,22 @@
 			</md-list-item>
 
 			<md-list-item class="mc-list-right" layout="column" layout-align="start start" flex>
-				<div class="mc-width" layout="row" layout-align="space-between start">
-					<div layout="row">
-						<span class="mc-params-font1 mc-params-color2">无创血压</span>
-						<span class="mc-params-font1 mc-params-color2">18:30&nbsp;</span>
-					</div>
-					<span class="mc-params-font1 mc-params-color2">mmHg</span>
+				<div class="mc-width mc-special-height1" layout="row">
+					<span class="mc-special-width1 mc-params-font1 mc-params-color2">无创血压</span>
+					<span class="mc-special-width2 mc-params-font1 mc-params-color2">18:30&nbsp;</span>
+					<span class="mc-special-width3 mc-params-font1 mc-params-color2">mmHg</span>
 				</div>
-				<div layout="row" class="mc-width">
+				<div layout="row" layout-align="space-between start" class="mc-width mc-special-height2">
 					<div layout="column">
 						<span class="mc-params-font1 mc-params-color2">160</span>
 						<span class="mc-params-font1 mc-params-color2">90</span>
 					</div>
-					<div class="mc-width" layout="row" layout-align="space-between center">
-						<span class="mc-params-font3 mc-params-color2">120/80</span>
-						<span class="mc-params-font4 mc-params-color2">93</span>
-					</div>
+					<span class="mc-params-font4 mc-params-color2">93</span>
 				</div>
-				<div class="mc-width" layout="row" layout-align="space-between center">
+				<div class="mc-width mc-special-height2" align="center">
+					<span class="mc-params-font3 mc-params-color2">120/80</span>
+				</div>
+				<div class="mc-width mc-special-height1" layout="row" layout-align="space-between center">
 					<span class="mc-params-font1 mc-params-color2">手动</span>
 					<span class="mc-params-font1 mc-params-color2">脉率</span>
 					<span class="mc-params-font1 mc-params-color2">60</span>

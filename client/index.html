@@ -8,30 +8,45 @@
 	<!-- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="styleesheet">
     -->
-	<link rel="stylesheet/less" type="text/css" href="styles/main.less"/>
-	<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css"/>
+	<link rel="stylesheet/less" type="text/css" href="./styles/main.less"/>
+	<link rel="stylesheet" type="text/css" href="./bower_components/angular-material/angular-material.css"/>
 </head>
 <body>
-	<div ui-view></div>
-	<script src="bower_components/less/dist/less.js"></script>
+	<div class="mc-router-div" ui-view></div>
+	<script src="./bower_components/less/dist/less.js"></script>
 
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-animate/angular-animate.js"></script>
-	<script src="bower_components/angular-aria/angular-aria.js"></script>
-	<script src="bower_components/angular-material/angular-material.js"></script>
-	<script src="bower_components/angular-messages/angular-messages.js"></script>
-	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-	<script src="bower_components/angular-validation-match/dist/angular-validation-match.js"></script>
+	<script src="./bower_components/angular/angular.js"></script>
+	<script src="./bower_components/angular-animate/angular-animate.js"></script>
+	<script src="./bower_components/angular-aria/angular-aria.js"></script>
+	<script src="./bower_components/angular-material/angular-material.js"></script>
+	<script src="./bower_components/angular-messages/angular-messages.js"></script>
+	<script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="./bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="./bower_components/angular-validation-match/dist/angular-validation-match.js"></script>
 
-	<script src="myapp.js"></script>
-	<script src="routes.js"></script>
+	<script src="./myapp.js"></script>
+	<script src="./routes.js"></script>
 <!--1、 前期先引用controller，后期再汇总到一两个js中引用;
 	2、 如何按需加载js? -->
-	<script src="accounts/controller/login.js"></script>
-	<script src="accounts/controller/register.js"></script>
-	<script src="accounts/controller/patient_info_add.js"></script>
-	<script src="accounts/controller/guardian_info_add.js"></script>
-
+	<script src="./accounts/controller/change_password.js"></script>
+	<script src="./accounts/controller/login.js"></script>
+	<script src="./accounts/controller/register.js"></script>
+	<script src="./accounts/controller/patient_info_add.js"></script>
+	<script src="./accounts/controller/guardian_info_add.js"></script>
+	<script src="./home/controller/diagnosis_info.js"></script>
+	<script src="./home/controller/guardian_list.js"></script>
+	<script src="./home/controller/history_review.js"></script>
+	<script src="./home/controller/physiology_parameter.js"></script>
+	<script src="./messages/controller/message_alert.js"></script>
+	<script src="./messages/controller/message_center.js"></script>
+	<script src="./messages/controller/message_doctor.js"></script>
+	<script src="./messages/controller/message_guardianpatient.js"></script>
+	<script src="./messages/controller/message_system.js"></script>
+	<script src="./users/controller/guardian_verification_code.js"></script>
+	<script src="./users/controller/monitor_terminal.js"></script>
+	<script src="./users/controller/personal_info_guardian.js"></script>
+	<script src="./users/controller/personal_info_patient.js"></script>
+	<script src="./users/controller/user_guardian.js"></script>
+	<script src="./users/controller/user_patient.js"></script>
 </body>
 </html>

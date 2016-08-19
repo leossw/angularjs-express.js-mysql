@@ -61,8 +61,8 @@ angular.module('mobilecare')
 		.state('cameramonitoring',{
 			url: '/cameramonitoring',
 			templateUrl: 'home/views/camera_monitoring.html',
-			controller: 'CameraMonitoringCtrl',
-			controllerAs: 'cmc'
+//			controller: 'CameraMonitoringCtrl',
+//			controllerAs: 'cmc'
 		})
 		.state('diagnosisinfo',{
 			url: '/diagnosisinfo',
@@ -135,8 +135,8 @@ angular.module('mobilecare')
 		.state('about',{
 			url: '/about',
 			templateUrl: 'users/views/about.html',
-			controller: 'AboutCtrl',
-			controllerAs: 'ac'
+//			controller: 'AboutCtrl',
+//			controllerAs: 'ac'
 		})
 		.state('guardianverificationcode',{
 			url: '/guardianverificationcode',
@@ -144,10 +144,10 @@ angular.module('mobilecare')
 			controller: 'GuardianVerificationCodeCtrl',
 			controllerAs: 'gvcc'
 		})
-		.state('monitorteminal',{
-			url: '/monitorteminal',
-			templateUrl: 'users/views/monitor_teminal.html',
-			controller: 'MonitorTeminalCtrl',
+		.state('monitorterminal',{
+			url: '/monitorterminal',
+			templateUrl: 'users/views/monitor_terminal.html',
+			controller: 'MonitorTerminalCtrl',
 			controllerAs: 'mtc'
 		})
 		.state('personalinfoguardian',{
