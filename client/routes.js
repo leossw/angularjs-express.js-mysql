@@ -162,17 +162,11 @@ angular.module('mobilecare')
 			controller: 'PersonalInfoPatientCtrl',
 			controllerAs: 'pipc'
 		})
-		.state('userguardian',{
-			url: '/userguardian',
-			templateUrl: 'users/views/user_guardian.html',
-			controller: 'UserGuardianCtrl',
-			controllerAs: 'ugc'
-		})
-		.state('userpatient',{
-			url: '/userpatient',
-			templateUrl: 'users/views/user_patient.html',
-			controller: 'UserPatientCtrl',
-			controllerAs: 'upc'
+		.state('user',{
+			url: '/user',
+			templateUrl: 'users/views/user.html',
+			controller: 'UserCtrl',
+			controllerAs: 'uc'
 		});
 	//设置首页
 	$urlRouterProvider.otherwise('/login');
