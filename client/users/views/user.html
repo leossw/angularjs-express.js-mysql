@@ -1,0 +1,91 @@
+<header>
+	<md-toolbar>
+		<div class="mc-text" layout="row" layout-align="start center" flex>
+			<span>我</span>
+		</div>
+	</md-toolbar>
+</header>
+
+<section>
+	<div layout="row" layout-align="start center">
+		<img class="mc-portrait" ng-src="images/doctor_1.jpg" alt="个人头像"/>
+		<div layout="column">
+			<span class="mc-user-font1">{{uc.userNickname}}</span>
+			<span class="mc-user-font2">用户名:{{uc.userName}}</span>
+		</div>
+	</div>
+	<md-list>
+		<md-list-item>
+			<md-button layout="row" class="mc-user-btn" ng-click="uc.goToPersonalInfo()">
+				<md-icon class="mc-home-icon" md-svg-icon="social:ic_person_outline_24px"></md-icon>
+				<span class="mc-home-font1">个人信息</span>
+			</md-button>
+			<md-divider class="mc-divider"></md-divider>
+		</md-list-item>
+
+		<md-list-item ng-show="uc.isPatient">
+			<md-button layout="row" class="mc-user-btn" href="/monitorterminal">
+				<md-icon class="mc-home-icon" md-svg-icon="device:ic_devices_24px"></md-icon>
+				<span class="mc-home-font1">监测终端</span>
+			</md-button>
+			<md-divider class="mc-divider"></md-divider>
+		</md-list-item>
+
+		<md-list-item ng-show="uc.isPatient">
+			<md-button layout="row" class="mc-user-btn" href="/guardianverificationcode">
+				<md-icon class="mc-home-icon" md-svg-icon="action:ic_verified_user_24px"></md-icon>
+				<span class="mc-home-font1">监护人授权码</span>
+			</md-button>
+			<md-divider class="mc-divider"></md-divider>
+		</md-list-item>
+
+		<md-list-item>
+			<md-button layout="row" class="mc-user-btn" href="/changepsw">
+				<md-icon class="mc-home-icon" md-svg-icon="action:ic_lock_24px"></md-icon>
+				<span class="mc-home-font1">修改密码</span>
+			</md-button>
+			<md-divider class="mc-divider"></md-divider>
+		</md-list-item>
+
+		<md-list-item>
+			<md-button layout="row" class="mc-user-btn" href="/about">
+				<md-icon class="mc-home-icon" md-svg-icon="action:ic_info_24px"></md-icon>
+				<span class="mc-home-font1">关于</span>
+			</md-button>
+			<md-divider class="mc-divider"></md-divider>
+		</md-list-item>
+
+		<md-list-item>
+			<md-button ng-click="" layout="row" class="mc-user-btn" href="/login">
+				<md-icon class="mc-home-icon" md-svg-icon="action:ic_input_24px"></md-icon>
+				<span class="mc-home-font1">退出登录</span>
+			</md-button>
+			<md-divider class="mc-divider"></md-divider>
+		</md-list-item>
+	</md-list>
+</section>
+
+<footer class="mc-footer">
+	<md-list layout="row" layout-align="space-around center" flex>
+		<md-list-item>
+			<md-button class="mc-footer-btn" layout="column" layout-align="start center" href="/homepatient">
+				<md-icon md-svg-icon="action:ic_dashboard_24px"></md-icon>
+				<span class="mc-home-font2">功能</span>
+			</md-button>
+		</md-list-item>
+
+		<md-list-item>
+			<md-button class="mc-footer-btn" layout="column" layout-align="start center" href="/messagecenter">
+				<md-icon md-svg-icon="communication:ic_message_24px"></md-icon>
+				<span class="mc-home-font2">消息</span>
+			</md-button>
+		</md-list-item>
+
+		<md-list-item>
+			<md-button class="mc-footer-btn" layout="column" layout-align="start center">
+				<md-icon style="color: #3f51b5;" md-svg-icon="social:ic_person_24px"></md-icon>
+				<span style="color: #3f51b5;" class="mc-home-font2">我</span>
+			</md-button>
+		</md-list-item>
+	</md-list>
+</footer>
