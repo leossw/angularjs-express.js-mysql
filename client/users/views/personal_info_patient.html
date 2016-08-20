@@ -2,12 +2,12 @@
 	<md-toolbar>
 		<div layout="row" layout-align="space-between center" flex>
 			<div layout="row" layout-align="start center" flex>
-				<md-button class="md-icon-button" href="/userpatient" aria-label="back">
+				<md-button class="md-icon-button" href="/user" aria-label="back">
 					<md-icon md-svg-icon="navigation:ic_arrow_back_24px"></md-icon>
 				</md-button>
 				<span class="mc-header-span">个人信息</span>
 			</div>
-			<md-button ng-click="" aria-label="修改信息">
+			<md-button ng-click="pipc.changeInfoStatus()" aria-label="修改信息">
 				<md-icon md-svg-icon="content:ic_create_24px"></md-icon>
 			</md-button>
 		</div>
@@ -19,12 +19,12 @@
 		<form name="personalInfoPatient" layout="column" layout-align="start center" flex novalidate>
 			<md-input-container class="mc-input-container">
 				<label>姓名(必填)</label>
-				<input type="text" name="name" ng-model="123" required ng-disabled="true"/>
+				<input type="text" name="name" ng-model="pipc.patient.name" ng-disabled="pipc.changeInfo" required/>
 			</md-input-container>
 
 			<md-input-container class="mc-input-container mc-input-container-select">
 				<label>性别(必选)</label>
-				<md-select name="sex" ng-model="" required ng-disabled="true">
+				<md-select name="sex" ng-model="pipc.patient.sex" ng-disabled="pipc.changeInfo" required>
 					<md-option value="male">男</md-option>
 					<md-option value="female">女</md-option>
 				</md-select>
@@ -32,19 +32,19 @@
 
 			<md-input-container class="mc-input-container">
 				<label>出生日期(必填)</label>
-				<input type="date" name="birthday" placeholder="yyyy-mm-dd" min="1900-01-01" max="{{}}" ng-model="" required ng-disabled="true"/>
+				<input type="date" name="birthday" placeholder="yyyy-mm-dd" min="1900-01-01" max="{{}}" ng-model="pipc.patient.birthday" ng-disabled="pipc.changeInfo" required/>
 			</md-input-container>
 
 			<md-input-container class="mc-input-container mc-input-container-select">
 				<label>国籍</label>
-				<md-select ng-model="" ng-disabled="true">
+				<md-select ng-model="pipc.patient.countryCode" ng-disabled="pipc.changeInfo">
 					<md-option ng-repeat=" in " value="">{{}}</md-option>
 				</md-select>
 			</md-input-container>
 
 			<md-input-container class="mc-input-container mc-input-container-select">
-				<label>证件类型</label>
-				<md-select ng-model="" name="certificateType" ng-disabled="true">
+				<label>证件类型(必选)</label>
+				<md-select ng-model="pipc.patient.certificateType" name="certificateType" ng-disabled="pipc.changeInfo">
 					<md-option value="01">居民身份证</md-option>
 					<md-option value="02">港澳通行证</md-option>
 					<md-option value="03">台湾通行证</md-option>
@@ -53,23 +53,23 @@
 			</md-input-container>
 
 			<md-input-container class="mc-input-container">
-				<label>证件号码</label>
-				<input type="text" name="idCard" ng-disabled="true"/>
+				<label>证件号码(必填)</label>
+				<input type="text" ng-model="pipc.patient.idCard" name="idCard" ng-disabled="pipc.changeInfo"/>
 			</md-input-container>
 
 			<md-input-container class="mc-input-container">
 				<label>座机</label>
-				<input type="text" name="fixedTel" ng-disabled="true"/>
+				<input type="text" ng-model="pipc.patient.fixedTel" name="fixedTel" ng-disabled="pipc.changeInfo"/>
 			</md-input-container>
 
 			<md-input-container class="mc-input-container">
 				<label>手机</label>
-				<input type="text" name="mobilePhone" ng-disabled="true"/>
+				<input type="text" ng-model="pipc.patient.mobilePhone" name="mobilePhone" ng-disabled="pipc.changeInfo"/>
 			</md-input-container>
 
 			<md-input-container class="mc-input-container">
 				<label>电子邮箱</label>
-				<input type="email" name="email" ng-pattern="/^.+@.+\..+$/" ng-disabled="true"/>
+				<input type="email" ng-model="pipc.patient.email" name="email" ng-pattern="/^.+@.+\..+$/" ng-disabled="pipc.changeInfo"/>
 				<div ng-messages="personalInfoPatient.email.$error" role="alert">
 					<div ng-message="pattern">请输入正确的邮箱地址！</div>
 				</div>
@@ -79,17 +79,17 @@
 
 		<md-input-container class="mc-input-container">
 			<label>微信号</label>
-			<input type="text" name="weChat" ng-disabled="true"/>
+			<input type="text" ng-model="pipc.patient.weChat" name="weChat" ng-disabled="pipc.changeInfo"/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container">
 			<label>地址</label>
-			<input type="text" name="address" ng-disabled="true"/>
+			<input type="text" ng-model="pipc.patient.address" name="address" ng-disabled="pipc.changeInfo"/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container">
 			<label>邮政编码</label>
-			<input type="text" name="postalCode" ng-model="" md-maxlength="6" ng-pattern="/^[0-9]{6,}$/" ng-disabled="true"/>
+			<input type="text" name="postalCode" ng-model="pipc.patient.postalCode" md-maxlength="6" ng-pattern="/^[0-9]{6,}$/" ng-disabled="pipc.changeInfo"/>
 			<div ng-messages="personalInfoPatient.postalCode.$error" role="alert" multiple>
 				<div ng-message="pattern">请输入正确的邮政编码!</div>
 				<div ng-message="md-maxlength">请输入6位数的邮政编码!</div>
@@ -98,17 +98,17 @@
 
 		<md-input-container class="mc-input-container">
 			<label>身高(cm)</label>
-			<input type="number" name="height" step="1" ng-disabled="true"/>
+			<input type="number" name="height" ng-model="pipc.patient.height" step="1" ng-disabled="pipc.changeInfo"/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container">
 			<label>体重(kg)</label>
-			<input type="number" name="weight" step="1" ng-disabled="true"/>
+			<input type="number" name="weight" ng-model="pipc.patient.weight" step="1" ng-disabled="pipc.changeInfo"/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container mc-input-container-select">
 			<label>血型</label>
-			<md-select ng-model="" name="bloodType" ng-disabled="true">
+			<md-select ng-model="pipc.patient.bloodType" name="bloodType" ng-disabled="pipc.changeInfo">
 				<md-option value="01">A型</md-option>
 				<md-option value="02">B型</md-option>
 				<md-option value="03">O型</md-option>
@@ -118,10 +118,10 @@
 
 		<md-input-container class="mc-input-container">
 			<label>主要病症</label>
-			<textarea maxlength="1000" name="mainDisease" ng-disabled="true"></textarea>
+			<textarea maxlength="1000" name="mainDisease"  ng-model="pipc.patient.mainDisease" ng-disabled="pipc.changeInfo"></textarea>
 		</md-input-container>
 
-		<md-button class="md-raised md-primary mc-btn-width" ng-show="false" ng-click="">确定</md-button>
+		<md-button class="md-raised md-primary mc-btn-width" ng-hidden="pipc.changeInfo" ng-click="pipc.submitChangeInfo()">确定</md-button>
 	</form>
 </md-content>
 </section>

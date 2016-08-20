@@ -1,7 +1,7 @@
 <header>
 	<md-toolbar>
 		<div layout="row" layout-align="start center" flex>
-			<span class="mc-text">消息({{}})</span>
+			<span class="mc-text">消息({{mcc.messageCount}})</span>
 		</div>
 	</md-toolbar>
 </header>
@@ -12,7 +12,7 @@
 			<md-button layout="row" layout-align="space-between center" class="mc-message-btn" href="/messageguardianpatient">
 				<div>
 					<md-icon class="mc-home-icon" md-svg-icon="social:ic_people_24px"></md-icon>
-					<span class="mc-home-font1">监护人/患者消息()</span>
+					<span class="mc-home-font1">监护人/患者消息({{mcc.messageGuardianPatient}})</span>
 				</div>
 				<div>
 					<md-icon class="mc-message-icon" md-svg-icon="communication:ic_message_24px"></md-icon>
@@ -25,7 +25,7 @@
 			<md-button layout="row" layout-align="space-between center" class="mc-message-btn" href="/messagedoctor">
 				<div>
 					<md-icon class="mc-home-icon" md-svg-icon="action:ic_account_circle_24px"></md-icon>
-					<span class="mc-home-font1">医嘱消息()</span>
+					<span class="mc-home-font1">医嘱消息({{mcc.messageDoctor}})</span>
 				</div>
 				<div>
 					<md-icon class="mc-message-icon" md-svg-icon="communication:ic_message_24px"></md-icon>
@@ -38,7 +38,7 @@
 			<md-button layout="row" layout-align="space-between center" class="mc-message-btn" href="/messagealert">
 				<div>
 					<md-icon class="mc-home-icon" md-svg-icon="action:ic_alarm_add_24px"></md-icon>
-					<span class="mc-home-font1">报警消息()</span>
+					<span class="mc-home-font1">报警消息({{mcc.messageAlert}})</span>
 				</div>
 				<div>
 					<md-icon class="mc-message-icon" md-svg-icon="communication:ic_message_24px"></md-icon>
@@ -51,7 +51,7 @@
 			<md-button layout="row" layout-align="space-between center" class="mc-message-btn" href="/messagesystem">
 				<div>
 					<md-icon class="mc-home-icon" md-svg-icon="social:ic_notifications_active_24px"></md-icon>
-					<span class="mc-home-font1">系统消息()</span>
+					<span class="mc-home-font1">系统消息({{mcc.messageSystem}})</span>
 				</div>
 				<div>
 					<md-icon class="mc-message-icon" md-svg-icon="communication:ic_message_24px"></md-icon>
@@ -79,7 +79,7 @@
 		</md-list-item>
 
 		<md-list-item>
-			<md-button class="mc-footer-btn" layout="column" layout-align="start center" href="/userpatient">
+			<md-button class="mc-footer-btn" layout="column" layout-align="start center" href="/user">
 				<md-icon md-svg-icon="social:ic_person_24px"></md-icon>
 				<span class="mc-home-font2">我</span>
 			</md-button>
