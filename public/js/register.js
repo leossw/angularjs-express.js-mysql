@@ -39,7 +39,7 @@ exports.addUser = function (req,res){
 exports.getCurrentUserId = function (req,res){
 	var userName = req.body.userName;
 	pool.getConnection(function (err,connection){
-		connection.query('SELECT id FROM user WHERE username=?',[userName],function (err,results){
+		connection.query('SELECT id,user_nicename,user_type FROM user WHERE username=?',[userName],function (err,results){
 			res.send(results[0]);
 			connection.release();
 		});
