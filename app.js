@@ -10,6 +10,7 @@ var app = express();
 
 var login = require('./public/js/login'); 
 var register = require('./public/js/register'); 
+var personalInfoPatient = require('./public/js/personal_info_patient');
 
 // view engine setup
 //这就可以使用.html后缀名 但是根本上还是ejs模板引擎
@@ -33,6 +34,7 @@ app.get('/api/CountryCode',register.getCountryCode);
 app.post('/api/currentUserId',register.getCurrentUserId);
 app.post('/api/register/addPatientInfo',register.patientInfoAdd);
 app.post('/api/register/addGuardianInfo',register.guardianInfoAdd);
+app.post('/api/getPatientInfo',personalInfoPatient.getPatientInfo);
 /*app.get('/',function (req,res){
 	res.sendFile('./mc/index.html',{"root": __dirname});
 });
