@@ -35,6 +35,8 @@ app.post('/api/currentUserId',register.getCurrentUserId);
 app.post('/api/register/addPatientInfo',register.patientInfoAdd);
 app.post('/api/register/addGuardianInfo',register.guardianInfoAdd);
 app.post('/api/getPatientInfo',personalInfoPatient.getPatientInfo);
+app.post('/api/changePatientInfo',personalInfoPatient.changePatientInfo);
+app.post('/api/getMonitorTerminalInfo',personalInfoPatient.getMonitorTerminalInfo);
 /*app.get('/',function (req,res){
 	res.sendFile('./mc/index.html',{"root": __dirname});
 });
