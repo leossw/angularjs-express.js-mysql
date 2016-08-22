@@ -44,7 +44,22 @@ exports.getMonitorTerminalInfo = function (req,res){
 			else{
 				res.send(results[0]);
 			}
-		connection.release();
+			connection.release();
+		});
+	});
+}
+
+//获取监护人授权码
+exports.getGuardianVerificationCode = function (req,res){
+	pool.getConnection(function (err,connection){
+		connection.query('SELECT authorization_guardian_verification_code,common_guardian_verification_code FROM patient WHERE registrar = ?',[req.body.registrar],function (err,results){
+			if(err){
+				console.log(err.message);
+			}
+			else{
+				res.send(results[0]);
+			}
+			connection.release();
 		});
 	});
 }
