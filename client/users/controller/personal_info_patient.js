@@ -1,5 +1,5 @@
 angular.module('mobilecare').controller('PersonalInfoPatientCtrl',
-	['$scope','$state','$cookies','$http',function ($scope,$state,$cookies,$http){
+	['$scope','$state','$cookies','$http','$mdDialog',function ($scope,$state,$cookies,$http,$mdDialog){
     
     var vm = this;
 
@@ -7,6 +7,7 @@ angular.module('mobilecare').controller('PersonalInfoPatientCtrl',
     vm.changeInfo = true;
     vm.registrar = $cookies.get('currentUserId');
     vm.maxbirthday = new Date();
+    vm.errorMessage = '';
 
     vm.patient = {
     	name: '',
@@ -66,8 +67,53 @@ angular.module('mobilecare').controller('PersonalInfoPatientCtrl',
     		console.log('无法获取国籍列表');
     	});
 
-//提交修改的信息
-    vm.submitChangeInfo = function (){
 
+//提交修改的信息
+    vm.submitChangePatientInfo = function (){
+
+		//定义修改的信息
+    	var info = {
+    		name: vm.patient.name,
+    		sex: vm.patient.sex,
+    		birthday: vm.patient.birthday,
+    		countryCode: vm.patient.countryCode,
+    		certificateType: vm.patient.certificateType,
+    		idCard: vm.patient.idCard,
+    		fixedTel: vm.patient.fixedTel,
+    		mobilePhone: vm.patient.mobilePhone,
+    		email: vm.patient.email,
+    		weChat: vm.patient.weChat,
+    		address: vm.patient.address,
+    		postalCode: vm.patient.postalCode,
+    		height: vm.patient.height,
+    		weight: vm.patient.weight,
+    		bloodType: vm.patient.bloodType,
+    		mainDisease: vm.patient.mainDisease,
+    		registrar: vm.registrar
+    	}
+    	$http.post('/api/changePatientInfo',info)
+    		.success(function (data){
+    			if(data == '01'){
+    				vm.errorMessage = '信息修改成功';
+    				vm.showAlert();
+    			}
+    			else if(data == '02'){
+    				vm.errorMessage = '信息修改失败';
+    				vm.showAlert();
+    			}
+    		})
+    		.error(function (data){
+    			console.log('无法修改个人信息');
+    		});
+    }
+
+//弹出提示框
+    vm.showAlert = function (){
+    	$mdDialog.show(
+    		$mdDialog.alert()
+    			.clickOutsideToClose(true)
+    			.textContent(vm.errorMessage)
+    			.ok('确定')
+    	);
     }
 }]);
