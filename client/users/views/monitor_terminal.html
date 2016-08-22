@@ -10,57 +10,57 @@
 </header>
 
 <section>
-	<md-content class="md-cotent-top" layout="column" layout-align="start center" layout-padding flex>
+	<md-content class="mc-content-top mc-monitor-padding" layout="column" layout-align="start center" layout-padding flex>
 		<md-input-container class="mc-input-container">
-			<label>终端序列号</label>
-			<input type="text" name="serialNumber" ng-model="" disabled/>
+			<label class="mc-label">终端序列号</label>
+			<input type="text" name="serialNumber" ng-model="mtc.serialNumber" disabled/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container">
-			<label>终端名称</label>
-			<input type="text" name="terminalName" ng-model="" disabled/>
+			<label class="mc-label">终端名称</label>
+			<input type="text" name="terminalName" ng-model="mtc.terminalName" disabled/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container">
-			<label>固件版本号</label>
-			<input type="text" name="firmwareVersionNumber" ng-model="" disabled/>
+			<label class="mc-label">固件版本号</label>
+			<input type="text" name="firmwareVersionNumber" ng-model="mtc.firmwareVersionNumber" disabled/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container">
-			<label>生产日期</label>
-			<input type="text" name="productDate" ng-model="" disabled/>
+			<label class="mc-label">生产日期</label>
+			<input type="text" name="productionDate" ng-model="mtc.productionDate" disabled/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container">
-			<label>注册验证码</label>
-			<input type="text" name="registerVerifiedCode" ng-model="" disabled/>
+			<label class="mc-label">注册验证码</label>
+			<input type="text" name="registerVerifiedCode" ng-model="mtc.registerVerifiedCode" disabled/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container">
-			<label>监护仪ID</label>
-			<input type="text" name="monitorID" ng-model="" disabled/>
+			<label class="mc-label">监护仪ID</label>
+			<input type="text" name="monitorID" ng-model="mtc.monitorID" disabled/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container">
-			<label>安装时间</label>
-			<input type="text" name="installTime" ng-model="" disabled/>
+			<label class="mc-label">安装时间</label>
+			<input type="text" name="installTime" ng-model="mtc.installTime" disabled/>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container mc-input-container-select">
 			<label>设备状态</label>
-			<md-select name="deviceStatus" ng-model="" disabled>
+			<md-select name="deviceStatus" ng-model="mtc.deviceStatus" disabled>
 				<md-option value="0">监护中</md-option>
 				<md-option value="1">正常</md-option>
 				<md-option value="2">存在未知使用人</md-option>
 				<md-option value="3">设备故障</md-option>
-				<md-option value="2">设备停用</md-option>
-				<md-option value="3">未知</md-option>
+				<md-option value="4">设备停用</md-option>
+				<md-option value="5">未知</md-option>
 			</md-select>
 		</md-input-container>
 
 		<md-input-container class="mc-input-container mc-input-container-select">
 			<label>绑定状态</label>
-			<md-select name="bindingStatus" ng-model="" disabled>
+			<md-select name="bindingStatus" ng-model="mtc.bindingStatus" disabled>
 				<md-option value="0">未绑定</md-option>
 				<md-option value="1">已绑定</md-option>
 			</md-select>
