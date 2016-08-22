@@ -4,6 +4,7 @@ angular.module('mobilecare').controller('MonitorTerminalCtrl',
     var vm = this;
     vm.registrar = $cookies.get('currentUserId');    //获取用户ID
 
+//发送请求获取监控终端信息
     $http.post('/api/getMonitorTerminalInfo',{registrar: vm.registrar})
     	.success(function (data){
 //    		console.log(data);
