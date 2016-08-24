@@ -102,6 +102,24 @@ angular.module('mobilecare')
 			controller: 'PhysiologyParameterCtrl',
 			controllerAs: 'ppc'
 		})
+		.state('trendchartreview',{
+			url: '/trendchartreview',
+			templateUrl: 'home/views/trend_chart_review.html',
+//			controller: 'TrendChartReviewCtrl',
+//			controllerAs: 'tcrc'
+		})
+		.state('trendmapreview',{
+			url: '/trendmapreview',
+			templateUrl: 'home/views/trend_map_review.html',
+//			controller: 'TrendMapReviewCtrl',
+//			controllerAs: 'tmrc'
+		})
+		.state('waveformreview',{
+			url: '/waveformreview',
+			templateUrl: 'home/views/waveform_review.html',
+//			controller: 'WaveformReviewCtrl',
+//			controllerAs: 'wrc'
+		})
 		.state('messagealert',{
 			url: '/messagealert',
 			templateUrl: 'messages/views/message_alert.html',
