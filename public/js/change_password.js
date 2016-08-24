@@ -3,10 +3,9 @@ var crypto = require('crypto');   //用sha1给密码加密
 
 //修改用户密码
 exports.changeIt = function (req,res){
-	var sha1 = crypto.createHash('sha1');
-	var oldPassword = sha1.update(req.body.oldPassword).digest('hex'),   //原密码sha1加密
-		newPassword = sha1.update(req.body.newPassword).digest('hex');   //新密码sha1加密
-		
+	var oldPassword = crypto.createHash('sha1').update(req.body.oldPassword).digest('hex'),   //原密码sha1加密
+		newPassword = crypto.createHash('sha1').update(req.body.newPassword).digest('hex');   //新密码sha1加密
+	
 	pool.getConnection(function (err,connection){
 		connection.query('SELECT password FROM user WHERE username = ?',[req.body.userName],function (err,results){
 			if(err){
