@@ -21,4 +21,5 @@ angular.module('mobilecare').controller('PhysiologyParameterCtrl',
     	return y + '-' + m + '-' + d+' '+h+':'+minute;  
 	}
 	
+	var 
 }]);
