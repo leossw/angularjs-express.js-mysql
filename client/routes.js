@@ -85,8 +85,8 @@ angular.module('mobilecare')
 		.state('homeguardian',{
 			url: '/homeguardian',
 			templateUrl: 'home/views/home_guardian.html',
-//			controller: 'HomeGuardianCtrl',
-//			controllerAs: 'hgc'
+			controller: 'HomeGuardianCtrl',
+			controllerAs: 'hgc'
 		})
 		.state('homepatient',{
 			url: '/homepatient',
