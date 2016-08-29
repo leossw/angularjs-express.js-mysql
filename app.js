@@ -40,7 +40,6 @@ app.post('/api/changePatientInfo',personalInfoPatient.changePatientInfo);
 app.post('/api/getMonitorTerminalInfo',personalInfoPatient.getMonitorTerminalInfo);
 app.post('/api/getGuardianVerificationCode',personalInfoPatient.getGuardianVerificationCode);
 app.post('/api/changePassword',changePassword.changeIt);
-app.post('/api/changePassword',changePassword.changeIt);
 /*app.get('/',function (req,res){
 	res.sendFile('./mc/index.html',{"root": __dirname});
 });
