@@ -1,5 +1,5 @@
 angular.module('mobilecare').controller('MessageCenterCtrl',
-	['$scope','$state','$http',function ($scope,$state,$http){
+	['$scope','$state','$http','$cookies',function ($scope,$state,$http,$cookies){
     
     var vm = this;
 
@@ -8,6 +8,8 @@ angular.module('mobilecare').controller('MessageCenterCtrl',
     vm.messageDoctor = 0;
     vm.messageAlert = 0;
     vm.messageSystem = 0;
+    vm.userType = $cookies.get('currentUserType');
+    vm.isPatient = (vm.userType == '01')? true : false;
 
 //发送get请求，获取未读消息数量
 /*  $http.get('/api/')
@@ -23,4 +25,13 @@ angular.module('mobilecare').controller('MessageCenterCtrl',
     	});
 */
 
+//跳转到功能页面
+	vm.goHome = function (){
+		if(vm.userType == '01'){
+			$state.go('homepatient');
+		}
+		else if(vm.userType == '02'){
+			$state.go('homeguardian');
+		}
+	}
 }]);
