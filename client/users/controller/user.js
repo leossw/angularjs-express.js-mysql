@@ -21,4 +21,13 @@ angular.module('mobilecare').controller('UserCtrl',
     	}
     }
 
+//跳转到功能页面
+	vm.goHome = function (){
+		if(vm.isPatient){
+			$state.go('homepatient');
+		}
+		else{
+			$state.go('homeguardian');
+		}
+	}
 }]);
