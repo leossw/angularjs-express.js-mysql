@@ -65,9 +65,11 @@
 <footer class="mc-footer">
 	<md-list layout="row" layout-align="space-around center" flex>
 		<md-list-item>
-			<md-button class="mc-footer-btn" layout="column" layout-align="start center" href="/homepatient">
-				<md-icon md-svg-icon="action:ic_dashboard_24px"></md-icon>
-				<span class="mc-home-font2">功能</span>
+			<md-button class="mc-footer-btn" layout="column" layout-align="start center" ng-click="mcc.goHome()">
+				<md-icon md-svg-icon="action:ic_dashboard_24px" ng-show="mcc.isPatient"></md-icon>
+				<span class="mc-home-font2" ng-show="mcc.isPatient">功能</span>
+				<md-icon md-svg-icon="social:ic_people_24px" ng-hide="mcc.isPatient"></md-icon>
+				<span class="mc-home-font2" ng-hide="mcc.isPatient">患者</span>
 			</md-button>
 		</md-list-item>
 
