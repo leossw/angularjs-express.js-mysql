@@ -94,7 +94,12 @@ angular.module('mobilecare')
 //			controller: 'HomePatientCtrl',
 //			controllerAs: 'hpc'
 		})
-
+		.state('guardianaddpatient',{
+			url: '/guardianaddpatient',
+			templateUrl: 'home/views/guardian_add_patient.html',
+			controller: 'GuardianAddPatientCtrl',
+			controllerAs: 'gapc'
+		})
 		//需要订阅生理参数数据
 		.state('physiologyparameter',{
 			url: '/physiologyparameter',
