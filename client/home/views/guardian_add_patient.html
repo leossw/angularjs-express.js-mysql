@@ -1,0 +1,29 @@
+<md-dialog>
+	<md-toolbar layout="row" layout-align="start center">
+	<span class="mc-span">添加患者</span>
+	</md-toolbar>
+
+<section>
+    <form name="addPatientForm">
+    <md-dialog-content layout="column" layout-align="start center">
+	<md-input-container class="mc-input-container2">
+		<label>患者姓名(必填)</label>
+		<input name="patientName" type="text" ng-model="gapc.patientName" required/>
+	</md-input-container>
+
+	<md-checkbox ng-model="gapc.guardianType" aria-label="guardian type">
+	授权监护人
+	</md-checkbox>
+
+	<md-input-container class="mc-input-container2">
+		<label>验证码(必填)</label>
+		<input name="verificationCode" type="text" ng-model="gapc.verificationCode" required/>
+	</md-input-container>
+	</md-dialog-content>
+	<div layout="row" layout-align="space-around center">
+		<md-button ng-click="gapc.close()">关闭</md-button>
+		<md-button ng-click="gapc.addNewPatient()" ng-disabled="addPatientForm.$invalid">添加</md-button>
+	</div>
+	</form>
+</section>
+</md-dialog>
