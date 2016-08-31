@@ -5,10 +5,15 @@ angular.module('mobilecare').controller('HomeGuardianCtrl',
 
 //添加监护患者
     vm.addPatientDialog = function (){
-
+    	$mdDialog.show({
+    		controller: 'GuardianAddPatientCtrl',
+       		controllerAs: 'gapc',
+        	templateUrl: 'home/views/guardian_add_patient.html',
+        	clickOutsideToClose: true
+    	});
     }
 
-       vm.openGuardianAddPatientDialog = function(){
+/*       vm.openGuardianAddPatientDialog = function(){
       $mdDialog.show({
         controller: 'GuardianAddPatientCtrl',
         controllerAs: 'gapc',
@@ -25,4 +30,5 @@ angular.module('mobilecare').controller('HomeGuardianCtrl',
           $scope.status = 'You cancelled the dialog.';
         });
     };
+    */
 }]);
