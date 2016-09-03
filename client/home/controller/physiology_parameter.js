@@ -1,5 +1,5 @@
 angular.module('mobilecare').controller('PhysiologyParameterCtrl',
-	['$scope','$state','$interval',function ($scope,$state,$interval){
+	['$scope','$state','$interval','$http',function ($scope,$state,$interval,$http){
     
     var vm = this;
 
@@ -21,5 +21,11 @@ angular.module('mobilecare').controller('PhysiologyParameterCtrl',
     	return y + '-' + m + '-' + d+' '+h+':'+minute;  
 	}
 	
-
+	$http.get('/api/getPhysiologyParameter')
+		.success(function (data){
+			console.log(data);
+		})
+		.error(function (data){
+			console.log('无法获取生理参数');
+		})
 }]);
