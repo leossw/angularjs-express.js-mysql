@@ -5,13 +5,13 @@
 
 <section>
     <form name="addPatientForm">
-    <md-dialog-content layout="column" layout-align="start center">
-	<md-input-container class="mc-input-container2">
+    <md-dialog-content layout="column" layout-align="start start">
+	<md-input-container class="mc-input-container2 mc-dialog-top">
 		<label>患者姓名(必填)</label>
 		<input name="patientName" type="text" ng-model="gapc.patientName" required/>
 	</md-input-container>
 
-	<md-checkbox ng-model="gapc.guardianType" aria-label="guardian type">
+	<md-checkbox class="mc-input-container2" ng-model="gapc.guardianType" aria-label="guardian type">
 	授权监护人
 	</md-checkbox>
 
