@@ -12,6 +12,7 @@ var login = require('./public/js/login');
 var register = require('./public/js/register'); 
 var personalInfoPatient = require('./public/js/personal_info_patient');
 var changePassword = require('./public/js/change_password');
+var physiologyParameter = require('./public/js/physiology_parameter');
 
 // view engine setup
 //这就可以使用.html后缀名 但是根本上还是ejs模板引擎
@@ -40,6 +41,8 @@ app.post('/api/changePatientInfo',personalInfoPatient.changePatientInfo);
 app.post('/api/getMonitorTerminalInfo',personalInfoPatient.getMonitorTerminalInfo);
 app.post('/api/getGuardianVerificationCode',personalInfoPatient.getGuardianVerificationCode);
 app.post('/api/changePassword',changePassword.changeIt);
+app.get('/api/getPhysiologyParameter',physiologyParameter.getPhysiologyParameter);
+
 /*app.get('/',function (req,res){
 	res.sendFile('./mc/index.html',{"root": __dirname});
 });
