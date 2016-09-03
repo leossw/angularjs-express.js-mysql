@@ -9,7 +9,7 @@ var pool = mysql.createPool({
 	database: 'mobilecare'
 });
 
-module.exports = pool ;
+module.exports = pool;
 /*pool.getConnection(function (err){
 	if(err){
 		console.log('mysql connection error');
