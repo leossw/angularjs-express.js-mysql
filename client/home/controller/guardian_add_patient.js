@@ -1,9 +1,17 @@
 angular.module('mobilecare').controller('GuardianAddPatientCtrl',
 	['$scope','$state','$mdDialog',function ($scope,$state,$mdDialog){
 
-		var vm = this;
+	var vm = this;
+	vm.errorMessage= '';
+	vm.patientName = '';
+	vm.verificationCode = '';
 
-	vm.close = function () {
+
+
+
+
+//关闭'添加患者'对话框
+	vm.close = function (){
       $mdDialog.hide();
-    };
+    }
 }]);
